@@ -1,20 +1,30 @@
+import {NameTag} from '../../components/src';
+import {Button} from 'react-bootstrap';
+
 const Main = () => {
+    const memberList = [
+        "이로움", "이로움"
+    ]
+
     return (
         <header>
             <h1>2022 점심스터디 발제자 뽑기</h1>
             <main>
                 <h2>인원:</h2>
+                {memberList.map((person) => (
+                    <NameTag name={person}/>
+                ))}
                 <button type="button">
                     뽑기
                 </button>
             </main>
             <footer>
-                <button type="button">
+                <Button variant="outline-primary">
                     인원 추가하기
-                </button>
-                <button type="button">
+                </Button>
+                <Button variant="outline-primary">
                     뽑기 인원 변경하기
-                </button>
+                </Button>
             </footer>
         </header>
     )
